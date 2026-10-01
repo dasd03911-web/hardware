@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildMart - Hardware Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span>🔧</span> BuildMart
+        </div>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <button onclick="searchProducts()">🔍</button>
+            </div>
+
+            <button class="cart-btn" onclick="showCart()">
+                🛒 Cart <span id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">QUALITY TOOLS. BETTER PROJECTS.</p>
+
+            <h1>
+                Everything You Need
+                <span>To Build Better.</span>
+            </h1>
+
+            <p>
+                Premium hardware, power tools, hand tools and building
+                supplies for professionals and DIY enthusiasts.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#products" class="btn primary-btn">Shop Now</a>
+                <a href="#categories" class="btn secondary-btn">Explore Categories</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="tool-circle">🔨</div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section" id="categories">
+        <div class="section-heading">
+            <p>SHOP BY CATEGORY</p>
+            <h2>Find What You Need</h2>
+        </div>
+
+        <div class="category-grid">
+
+            <div class="category-card">
+                <div class="category-icon">🔨</div>
+                <h3>Hand Tools</h3>
+                <p>Hammers, screwdrivers, pliers & more</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">⚡</div>
+                <h3>Power Tools</h3>
+                <p>Drills, saws, grinders & equipment</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🔩</div>
+                <h3>Fasteners</h3>
+                <p>Screws, bolts, nuts & anchors</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🪜</div>
+                <h3>Safety Equipment</h3>
+                <p>Gloves, helmets, glasses & more</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section products-section" id="products">
+        <div class="section-heading">
+            <p>OUR PRODUCTS</p>
+            <h2>Popular Hardware</h2>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+            <div class="product-card" data-name="Professional Hammer">
+                <div class="product-image">🔨</div>
+                <div class="product-info">
+                    <span class="product-category">Hand Tools</span>
+                    <h3>Professional Hammer</h3>
+                    <p>Heavy-duty steel claw hammer.</p>
+
+                    <div class="product-bottom">
+                        <strong>₹599</strong>
+                        <button onclick="addToCart('Professional Hammer', 599)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-name="Power Drill">
+                <div class="product-image">🔩</div>
+                <div class="product-info">
+                    <span class="product-category">Power Tools</span>
+                    <h3>Power Drill</h3>
+                    <p>High-performance electric drill.</p>
+
+                    <div class="product-bottom">
+                        <strong>₹2,499</strong>
+                        <button onclick="addToCart('Power Drill', 2499)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-name="Screwdriver Set">
+                <div class="product-image">🪛</div>
+                <div class="product-info">
+                    <span class="product-category">Hand Tools</span>
+                    <h3>Screwdriver Set</h3>
+                    <p>Professional 12-piece screwdriver set.</p>
+
+                    <div class="product-bottom">
+                        <strong>₹799</strong>
+                        <button onclick="addToCart('Screwdriver Set', 799)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-name="Safety Helmet">
+                <div class="product-image">⛑️</div>
+                <div class="product-info">
+                    <span class="product-category">Safety</span>
+                    <h3>Safety Helmet</h3>
+                    <p>Strong and comfortable protective helmet.</p>
+
+                    <div class="product-bottom">
+                        <strong>₹349</strong>
+                        <button onclick="addToCart('Safety Helmet', 349)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-name="Steel Pliers">
+                <div class="product-image">🔧</div>
+                <div class="product-info">
+                    <span class="product-category">Hand Tools</span>
+                    <h3>Steel Pliers</h3>
+                    <p>Durable professional-grade pliers.</p>
+
+                    <div class="product-bottom">
+                        <strong>₹449</strong>
+                        <button onclick="addToCart('Steel Pliers', 449)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-name="Measuring Tape">
+                <div class="product-image">📏</div>
+                <div class="product-info">
+                    <span class="product-category">Measuring</span>
+                    <h3>Measuring Tape</h3>
+                    <p>5-meter heavy-duty measuring tape.</p>
+
+                    <div class="product-bottom">
+                        <strong>₹249</strong>
+                        <button onclick="addToCart('Measuring Tape', 249)">
+                            Add +
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Offer -->
+    <section class="offer">
+        <div>
+            <p>LIMITED TIME OFFER</p>
+            <h2>Get 20% Off On Your First Order</h2>
+            <p>Use coupon code: <strong>BUILD20</strong></p>
+        </div>
+
+        <a href="#products" class="btn primary-btn">Shop Now</a>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+        <div class="about-image">
+            🏗️
+        </div>
+
+        <div class="about-content">
+            <p class="tagline">ABOUT BUILDMART</p>
+            <h2>Your Trusted Hardware Partner</h2>
+
+            <p>
+                BuildMart provides quality hardware products for
+                construction professionals, technicians and DIY lovers.
+            </p>
+
+            <p>
+                From basic hand tools to professional power equipment,
+                we aim to provide reliable products at competitive prices.
+            </p>
+
+            <a href="#contact" class="btn primary-btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+        <div class="section-heading">
+            <p>GET IN TOUCH</p>
+            <h2>Contact Us</h2>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+                <h3>BuildMart Hardware</h3>
+                <p>📍 123 Main Market, Mumbai, India</p>
+                <p>📞 +91 98765 43210</p>
+                <p>✉️ info@buildmart.com</p>
+            </div>
+
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn primary-btn">
+                    Send Message
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">🔧 BuildMart</div>
+        <p>Quality Hardware. Reliable Tools. Better Projects.</p>
+        <p>© 2026 BuildMart. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
